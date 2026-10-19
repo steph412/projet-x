@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PROJET X | Confiance numérique</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar">
+    <a href="#" class="logo">PROJET <span>X</span></a>
+
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#analyse">Analyser un document</a>
+        <a href="#apropos">À propos</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="hero" id="accueil">
+
+        <div class="hero-content">
+
+            <p class="badge">LA CONFIANCE NUMÉRIQUE, AUTREMENT</p>
+
+            <h1>
+                Vérifiez les informations.
+                <span>Restez vigilant.</span>
+            </h1>
+
+            <p class="description">
+                PROJET X est une plateforme expérimentale destinée
+                à aider les utilisateurs à examiner des documents
+                et à mieux comprendre les risques numériques.
+            </p>
+
+            <a href="#analyse" class="btn">
+                Commencer un test
+            </a>
+
+            <p class="notice">
+                Version expérimentale : aucun document n'est
+                certifié authentique par cette démonstration.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="analysis" id="analyse">
+
+        <h2>Analyser un document</h2>
+
+        <p>
+            Sélectionnez un document pour commencer une
+            démonstration de notre interface.
+        </p>
+
+        <form id="documentForm">
+
+            <label for="document">
+                Choisir un document
+            </label>
+
+            <input
+                type="file"
+                id="document"
+                accept=".pdf,.jpg,.jpeg,.png"
+                required
+            >
+
+            <button type="submit" class="btn">
+                Lancer le test
+            </button>
+
+        </form>
+
+        <div id="resultat" class="resultat" hidden></div>
+
+    </section>
+    
+    <!-- Comparaison de deux documents -->
+<section class="analysis">
+    <h2>Comparer deux documents</h2>
+
+    <p>
+        Compare les empreintes SHA-256 de deux fichiers
+        pour vérifier si leur contenu est identique.
+    </p>
+
+    <input type="file" id="documentA" accept=".pdf,.jpg,.jpeg,.png">
+
+    <input type="file" id="documentB" accept=".pdf,.jpg,.jpeg,.png">
+
+    <button type="button" class="btn" id="comparerDocuments">
+        Comparer les documents
+    </button>
+
+    <div id="resultatComparaison" class="resultat" hidden></div>
+</section>
+
+<!-- Historique des analyses -->
+<section class="analysis">
+    <h2>Historique des analyses</h2>
+
+    <p>
+        Retrouvez les dernières empreintes calculées sur cet appareil.
+    </p>
+
+    <button type="button" class="btn" id="effacerHistorique">
+        Effacer l'historique
+    </button>
+
+    <div id="historique"></div>
+</section>
+
+<!-- Vérification par empreinte de référence -->
+<section class="analysis">
+    <h2>Vérifier une empreinte de référence</h2>
+
+    <p>
+        Sélectionne un document et compare son empreinte
+        à une empreinte SHA-256 de référence.
+    </p>
+
+    <input
+        type="file"
+        id="documentReference"
+        accept=".pdf,.jpg,.jpeg,.png"
+    >
+
+    <label for="empreinteReference">
+        Empreinte SHA-256 de référence :
+    </label>
+
+    <textarea
+        id="empreinteReference"
+        rows="4"
+        placeholder="Colle ici l'empreinte SHA-256 de référence"
+        style="width:100%; padding:12px;"
+    ></textarea>
+
+    <button
+        type="button"
+        class="btn"
+        id="verifierReference"
+    >
+        Vérifier la correspondance
+    </button>
+
+    <div
+        id="resultatReference"
+        class="resultat"
+        hidden
+    ></div>
+</section>
+
+    <section class="about" id="apropos">
+
+        <h2>Notre mission</h2>
+
+        <p>
+            Nous voulons développer des outils numériques
+            capables d'aider les particuliers et les entreprises
+            à mieux examiner les documents et à prévenir
+            certaines formes de fraude.
+        </p>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 PROJET X — Prototype en développement.</p>
+</footer>
+
+
+<!-- ESPACE ÉTABLISSEMENT PROJET X -->
+<section class="espace-etablissement" id="etablissement">
+
+    <div class="entete-etablissement">
+        <span class="badge-etablissement">ESPACE PROFESSIONNEL</span>
+
+        <h2>Espace établissement</h2>
+
+        <p>
+            Enregistrez les attestations délivrées par votre centre
+            afin de faciliter leur vérification par les recruteurs.
+        </p>
+    </div>
+
+    <form id="formEtablissement">
+
+        <div class="champ">
+            <label for="nomEtablissement">
+                Nom de l'établissement
+            </label>
+
+            <input
+                type="text"
+                id="nomEtablissement"
+                placeholder="Ex. : Centre de Formation XYZ"
+                required
+            >
+        </div>
+
+        <div class="champ">
+            <label for="nomTitulaire">
+                Nom complet du titulaire
+            </label>
+
+            <input
+                type="text"
+                id="nomTitulaire"
+                placeholder="Nom et prénom"
+                required
+            >
+        </div>
+
+        <div class="champ">
+            <label for="nomFormation">
+                Formation suivie
+            </label>
+
+            <input
+                type="text"
+                id="nomFormation"
+                placeholder="Ex. : Développement web"
+                required
+            >
+        </div>
+
+        <div class="champ">
+            <label for="referenceAttestation">
+                Numéro de référence
+            </label>
+
+            <input
+                type="text"
+                id="referenceAttestation"
+                placeholder="Ex. : PX-2026-0001"
+                required
+            >
+        </div>
+
+        <div class="champ">
+            <label for="dateDelivrance">
+                Date de délivrance
+            </label>
+
+            <input
+                type="date"
+                id="dateDelivrance"
+                required
+            >
+        </div>
+
+        <button type="submit" class="btn">
+            Enregistrer l'attestation
+        </button>
+
+        <p id="messageEtablissement" role="status"></p>
+
+    </form>
+    
+<!-- QR CODE DE L'ATTESTATION -->
+<div class="zone-qr" id="zoneQR" hidden>
+
+    <h3>QR code de l'attestation</h3>
+
+    <p>
+        Voici le QR code associé à la référence enregistrée.
+    </p>
+
+    <div id="qrCode"></div>
+
+    <p id="referenceQR"></p>
+
+    <p class="avertissement-qr">
+        Démonstration : ce QR code ne prouve pas à lui seul
+        l'authenticité de l'attestation.
+    </p>
+
+</div>
+
+</section>
+
+<!-- TABLEAU DE BORD PROJET X -->
+<section class="dashboard" id="dashboard">
+
+    <div class="dashboard-header">
+        <span class="dashboard-badge">VOTRE ACTIVITÉ</span>
+
+        <h2>Tableau de bord</h2>
+
+        <p>
+            Consultez les attestations enregistrées
+            dans votre espace PROJET X.
+        </p>
+    </div>
+
+    <div class="dashboard-stats">
+
+        <article class="stat-card">
+            <span class="stat-icon">📄</span>
+            <p>Total des attestations</p>
+            <strong id="totalAttestations">0</strong>
+        </article>
+
+        <article class="stat-card">
+            <span class="stat-icon">🎓</span>
+            <p>Formations représentées</p>
+            <strong id="totalFormations">0</strong>
+        </article>
+
+    </div>
+
+    <div class="dashboard-history">
+
+        <div class="dashboard-history-header">
+            <h3>Dernières attestations</h3>
+
+            <button
+                type="button"
+                class="btn"
+                id="actualiserDashboard"
+            >
+                Actualiser
+            </button>
+        </div>
+
+        <div id="dernieresAttestations"></div>
+
+    </div>
+
+    <p id="messageDashboard" role="status"></p>
+
+</section>
+
+<!-- ESPACE RECRUTEUR PROJET X -->
+<section class="espace-recruteur" id="recruteur">
+
+    <div class="entete-recruteur">
+        <span class="badge-recruteur">ESPACE PROFESSIONNEL</span>
+
+        <h2>Vérifier une attestation</h2>
+
+        <p>
+            Saisissez le numéro de référence pour rechercher
+            une attestation enregistrée dans PROJET X.
+        </p>
+    </div>
+
+    <form id="formRecruteur">
+
+        <div class="champ">
+            <label for="rechercheReference">
+                Numéro de référence
+            </label>
+
+            <input
+                type="text"
+                id="rechercheReference"
+                placeholder="Ex. : PX-2026-0001"
+                required
+            >
+        </div>
+
+        <button type="submit" class="btn">
+            Rechercher l'attestation
+        </button>
+
+    </form>
+
+    <div
+        id="resultatRecruteur"
+        class="resultat"
+        role="status"
+        aria-live="polite"
+        hidden
+    ></div>
+
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
