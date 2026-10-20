@@ -114,3 +114,49 @@ champNom.value = profilEnregistre.nom || "";
 champObjectif.value = profilEnregistre.objectif || "";
 
 afficherCompetences();
+// AFFICHER LES ATTESTATIONS DANS LE PASSEPORT
+
+const zoneAttestations = document.getElementById("mesAttestations");
+
+function afficherAttestations() {
+    const attestations = JSON.parse(
+        localStorage.getItem("projetX_attestations") || "[]"
+    );
+
+    zoneAttestations.replaceChildren();
+
+    if (attestations.length === 0) {
+        zoneAttestations.textContent =
+            "Aucune attestation enregistrée pour le moment.";
+        return;
+    }
+
+    attestations.slice().reverse().forEach(function (attestation) {
+        const carte = document.createElement("article");
+        carte.className = "card";
+
+        const titre = document.createElement("h3");
+        titre.textContent = attestation.nomFormation || "Formation";
+
+        const etablissement = document.createElement("p");
+        etablissement.textContent =
+            "Établissement : " + (attestation.nomEtablissement || "Non renseigné");
+
+        const titulaire = document.createElement("p");
+        titulaire.textContent =
+            "Titulaire : " + (attestation.nomTitulaire || "Non renseigné");
+
+        const reference = document.createElement("p");
+        reference.textContent =
+            "Référence : " + (attestation.referenceAttestation || "Non renseignée");
+
+        const date = document.createElement("p");
+        date.textContent =
+            "Date de délivrance : " + (attestation.dateDelivrance || "Non renseignée");
+
+        carte.append(titre, etablissement, titulaire, reference, date);
+        zoneAttestations.appendChild(carte);
+    });
+}
+
+afficherAttestations();
