@@ -605,3 +605,95 @@ footer {
     font-size: 12px;
     color: #92400e;
 }
+/* ===== PROJET X : PASSEPORT DE COMPÉTENCES ===== */
+
+.passeport-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.passeport-container h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.passeport-container .card {
+    background: #ffffff;
+    padding: 22px;
+    margin-bottom: 22px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.passeport-container label {
+    display: block;
+    margin: 15px 0 8px;
+    font-weight: 600;
+}
+
+.passeport-container input,
+.passeport-container select,
+.passeport-container textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #d5dbe5;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background: #ffffff;
+}
+
+.passeport-container textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.passeport-container button {
+    display: inline-block;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    background: #1769ff;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.passeport-container #resultats .card {
+    border-left: 5px solid #1769ff;
+    overflow-wrap: anywhere;
+}
+
+.passeport-container #resultats h3 {
+    margin-top: 0;
+    color: #1769ff;
+}
+
+.passeport-container > p {
+    padding: 15px;
+    border-radius: 10px;
+    background: #fff4d6;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .passeport-container {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .passeport-container h2 {
+        font-size: 23px;
+    }
+
+    .passeport-container .card {
+        padding: 16px;
+    }
+}
