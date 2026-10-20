@@ -153,8 +153,30 @@ function afficherAttestations() {
         const date = document.createElement("p");
         date.textContent =
             "Date de délivrance : " + (attestation.dateDelivrance || "Non renseignée");
+const boutonVerifier = document.createElement("button");
+boutonVerifier.type = "button";
+boutonVerifier.textContent = "Vérifier cette attestation";
 
-        carte.append(titre, etablissement, titulaire, reference, date);
+boutonVerifier.addEventListener("click", function () {
+    const reference = attestation.referenceAttestation;
+
+    if (!reference) {
+        alert("Aucune référence disponible pour cette attestation.");
+        return;
+    }
+
+    window.location.href =
+        "verification.html?reference=" +
+        encodeURIComponent(reference);
+});
+        carte.append(
+    titre,
+    etablissement,
+    titulaire,
+    reference,
+    date,
+    boutonVerifier
+);
         zoneAttestations.appendChild(carte);
     });
 }
