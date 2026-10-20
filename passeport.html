@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJET X - Passeport de compétences</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>PROJET X</h1>
+        <p>Passeport de compétences</p>
+        <a href="index.html">Retour à l'accueil</a>
+    </header>
+
+    <main class="passeport-container">
+        <h2>Mon passeport de compétences</h2>
+
+        <section class="card">
+            <h3>Mon profil</h3>
+
+            <label for="nom">Nom complet :</label>
+            <input type="text" id="nom" placeholder="Ton nom">
+
+            <label for="objectif">Objectif professionnel :</label>
+            <input type="text" id="objectif" placeholder="Ex. Développeur web">
+        </section>
+
+        <section class="card">
+            <h3>Ajouter une compétence</h3>
+
+            <label for="competence">Compétence :</label>
+            <input type="text" id="competence" placeholder="Ex. HTML">
+
+            <label for="statut">Niveau de validation :</label>
+            <select id="statut">
+                <option value="declaree">Déclarée par l'utilisateur</option>
+                <option value="evaluee">Évaluée</option>
+                <option value="confirmee">Confirmée par un organisme</option>
+            </select>
+
+            <label for="preuve">Description ou preuve :</label>
+            <textarea id="preuve" placeholder="Décris ton expérience ou ajoute une référence"></textarea>
+
+            <button id="ajouter" type="button">Ajouter la compétence</button>
+        </section>
+
+        <section class="card">
+            <h3>Mes compétences</h3>
+            <div id="resultats"></div>
+        </section>
+
+        <p>
+            <strong>Important :</strong> les statuts sont déclaratifs dans cette version.
+            Ils ne constituent pas une vérification officielle des compétences.
+        </p>
+    </main>
+
+    <script src="passeport.js"></script>
+</body>
+</html>
